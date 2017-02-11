@@ -1,0 +1,55 @@
+{
+  "name": "salty-bear",
+  "productName": "SaltyBear",
+  "version": "0.1.0",
+  "description": "Redgate sound tool",
+  "main": "main.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
+    "test-watch": "npm test -- --watch",
+    "test-e2e": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register --require ./test/setup.js ./test/e2e.js",
+    "lint": "eslint app test *.js",
+    "hot-server": "node -r babel-register server.js",
+    "build-main": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
+    "build-renderer": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors",
+    "build": "npm run build-main && npm run build-renderer",
+    "start": "cross-env NODE_ENV=production electron ./",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main.development",
+    "package": "cross-env NODE_ENV=production node -r babel-register -r babel-polyfill package.js",
+    "package-all": "npm run package -- --all",
+    "postinstall": "echo postinstall",
+    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\""
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlredgate/SaltyBear.git"
+  },
+  "author": {
+    "name": "Karl Redgate",
+    "email": "karl.redgate@gmail.com",
+    "url": "https://github.com/karlredgate"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karlredgate/SaltyBear/issues"
+  },
+  "homepage": "https://github.com/karlredgate/SaltyBear",
+  "devDependencies": {
+    "electron": "*",
+    "electron-devtools-installer": "*",
+    "electron-packager": "*",
+    "electron-rebuild": "*",
+    "asar": "*"
+  },
+  "dependencies": {
+    "electron-debug": "*",
+    "font-awesome": "*"
+  },
+  "devEngines": {
+    "node": "4.x || 5.x || 6.x",
+    "npm": "2.x || 3.x"
+  }
+}
