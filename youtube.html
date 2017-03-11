@@ -3,13 +3,38 @@
     <head>
         <meta charset='UTF-8'/>
         <title>SaltyBear - YouTube</title>
+        <link rel="stylesheet" href="css/photon.min.css">
     </head>
     <body>
-        <h1>youtube</h1>
-        <iframe id="ytplayer" type="text/html" width="640" height="360"
-              src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-                frameborder="0"></iframe>
-        <p>youtube</p>
+        <div class='window'>
+            <header class='toolbar toolbar-header'>
+              <div class='toolbar-actions'>
+                  <div class='btn-group'>
+                      <button class='btn btn-default'>
+                          <span class='icon icon-download'></span>
+                      </button>
+                      <button class='btn btn-default'>
+                          <span class='icon icon-folder'></span>
+                      </button>
+                  </div>
+              </div>
+            </header>
+        <div class='window-content'>
+            <!--  width="640" height="360" -->
+            <div class='padded-more'>
+<iframe id="ytplayer" type="text/html"  width="720" height="480"
+src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <footer class='toolbar toolbar-footer'>
+            <div class='toolbar-actions'>
+                <button class='btn btn-default'>Cancel</button>
+                <button class='btn btn-primary pull-right'>Save</button>
+            </div>
+        </footer>
+        </div>
 
     </body>
 </html>

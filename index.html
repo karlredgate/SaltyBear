@@ -5,12 +5,15 @@
         <title>SaltyBear</title>
     </head>
     <body>
-        <h1>SaltyBear</h1>
-        <p>node version <script>document.write(process.versions.node)</script></p>
+        <!-- 
+      <h1>SaltyBear</h1>
+      <p>node version <script>document.write(process.versions.node)</script></p>
+        -->
 
-        <div class='container'>
-            <div ui-view></div>
-        </div>
+        <p>
+        <img src='SaltyBear.png' height='480' />
+        An audio toolbox.
+        </p>
 
         <p>
         <script>
@@ -24,7 +27,7 @@
             }
             ipcRenderer.on('asynchronous-reply', reply_handler );
             ipcRenderer.send('asynchronous-message', 'ping');
-            document.write( 'sent message' );
+            // document.write( 'sent message' );
         </script>
         </p>
     </body>

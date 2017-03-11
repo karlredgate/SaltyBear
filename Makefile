@@ -5,16 +5,26 @@ dmg: app
 	hdiutil create -srcfolder SaltyBear.app -volname SaltyBear -fs HFS+ -fsargs "-c c=64,a=16,e=16" -format UDRW -size 200000k foo.dmg
 
 app: SaltyBear.app/Contents/MacOS/Electron
+app: SaltyBear.app/Contents/Resources/SaltyBear.icns
 app: SaltyBear.app/Contents/Resources/app/package.json
 app: SaltyBear.app/Contents/Resources/app/index.js
 app: SaltyBear.app/Contents/Resources/app/index.html
 app: SaltyBear.app/Contents/Resources/app/youtube.html
 app: SaltyBear.app/Contents/Resources/app/viewer.html
-app: SaltyBear.app/Contents/Resources/SaltyBear.icns
+app: SaltyBear.app/Contents/Resources/app/css/photon.css
+app: SaltyBear.app/Contents/Resources/app/css/photon.min.css
+app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.eot
+app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.svg
+app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.ttf
+app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.woff
+app: SaltyBear.app/Contents/Resources/app/SaltyBear.png
 
 SaltyBear.app/Contents/Resources/app/%: %
-	mkdir -p SaltyBear.app/Contents/Resources/app
-	cp $< $@
+	@mkdir -p SaltyBear.app/Contents/Resources/app
+	@mkdir -p SaltyBear.app/Contents/Resources/app/css
+	@mkdir -p SaltyBear.app/Contents/Resources/app/fonts
+	@mkdir -p SaltyBear.app/Contents/Resources/app/images
+	install $< $@
 
 SaltyBear.app/Contents/MacOS/Electron: node_modules/electron/dist/Electron.app/Contents/MacOS/Electron
 	mkdir SaltyBear.app
