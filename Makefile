@@ -8,6 +8,8 @@ app: SaltyBear.app/Contents/MacOS/Electron
 app: SaltyBear.app/Contents/Resources/app/package.json
 app: SaltyBear.app/Contents/Resources/app/index.js
 app: SaltyBear.app/Contents/Resources/app/index.html
+app: SaltyBear.app/Contents/Resources/app/youtube.html
+app: SaltyBear.app/Contents/Resources/app/viewer.html
 app: SaltyBear.app/Contents/Resources/SaltyBear.icns
 
 SaltyBear.app/Contents/Resources/app/%: %
