@@ -7,6 +7,7 @@ dmg: app
 app: SaltyBear.app/Contents/MacOS/Electron
 app: SaltyBear.app/Contents/Resources/SaltyBear.icns
 app: SaltyBear.app/Contents/Resources/app/package.json
+app: SaltyBear.app/Contents/Resources/app/SaltyBear.png
 app: SaltyBear.app/Contents/Resources/app/index.js
 app: SaltyBear.app/Contents/Resources/app/index.html
 app: SaltyBear.app/Contents/Resources/app/youtube.html
@@ -17,10 +18,13 @@ app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.eot
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.svg
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.ttf
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.woff
-app: SaltyBear.app/Contents/Resources/app/SaltyBear.png
 app: SaltyBear.app/Contents/Resources/app/js/audiofile.js
 app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js
 app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js.map
+app: SaltyBear.app/Contents/Resources/app/images/orange-metal.jpg
+app: SaltyBear.app/Contents/Resources/app/images/orange-sound-waves.jpg
+app: SaltyBear.app/Contents/Resources/app/images/gold-leaf.jpg
+
 app: SaltyBear.app/Contents/Resources/app/demo.wav
 
 SaltyBear.app/Contents/Resources/app/%: %

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/photon.min.css">
     </head>
     <body>
+<!--
         <div class='window'>
 
             <header class='toolbar toolbar-header'>
@@ -25,7 +26,15 @@
             </div>
 
         </div>
+-->
             <div id='waveform'></div>
+            <div class='container' style='text-align: center'>
+                <button class='btn btn-primary' onclick='player.playPause()'>
+                    <i class='glyphicon glyphicon-play'></i>
+                    Play/Pause
+                </button>
+            </div>
+            <div id='equalizer' style='margin-top:10px'></div>
 
         <script src='js/wavesurfer.min.js'></script>
         <script src='js/audiofile.js'></script>

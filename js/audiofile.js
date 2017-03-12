@@ -13,6 +13,7 @@ var EQ = [
 ];
 
 function filter(band) {
+    var wavesurfer = this;
     var filter = wavesurfer.backend.ac.createBiquadFilter();
     filter.type = band.type;
     filter.gain.value = 0;
@@ -21,8 +22,6 @@ function filter(band) {
     return filter;
 }
 
-// var filterSet = EQ.map( filter );
-
 var config = {
     container: '#waveform',
     splitChannels: true,
@@ -30,28 +29,53 @@ var config = {
     progressColor: 'darkorange'
 };
 
-var _ready_check = null;
+function createFilterControl( filter ) {
+    var wavesurfer = this;
+
+    var filterConfig = {
+        type: 'range',
+        min: -40,
+        max: 40,
+        value: 0,
+        title: filter.frequency.value
+    };
+
+    var input = document.createElement('input');
+    wavesurfer.util.extend( input, filterConfig );
+    input.style.display = 'inline-block';
+    input.setAttribute( 'orient', 'vertical' );
+
+    var drawerStyle = {
+        'webkitAppearance': 'slider-vertical',
+        width: '50px', height: '150px'
+    };
+    wavesurfer.drawer.style( input, drawerStyle );
+
+    var container = document.querySelector( '#equalizer' );
+    container.appendChild( input );
+    function onChange( event ) {
+        filter.gain.value = ~~event.target.value;
+    }
+    input.addEventListener( 'input', onChange );
+    input.addEventListener( 'change', onChange );
+}
+
+var player = null;
+
 function makewave() {
-    clearInterval( _ready_check );
     var wavesurfer = WaveSurfer.create( config );
-    // wavesurfer.backend.setFilters( filters );
+    var filterSet = EQ.map( filter.bind(wavesurfer) );
+
+    wavesurfer.backend.setFilters( filterSet );
+    filterSet.forEach( createFilterControl.bind(wavesurfer) );
+    wavesurfer.filters = filterSet;
+
     wavesurfer.load( 'demo.wav' );
     wavesurfer.on('ready', function () { wavesurfer.play(); } );
     wavesurfer.play();
-    // document.write('loaded demo');
-    var x = document.getElementById('waveform');
-    // x.write('hello");
+    player = wavesurfer;
 }
 
-function whenReady() {
-    if ( document.readyState === "interactive" ) {
-        return makewave();
-    }
-    if ( document.readyState === "complete" ) {
-        return makewave();
-    }
-}
-
-// window.onload = whenReady;
-// _ready_check = setInterval( whenReady, 2000 );
 makewave();
+
+/* vim: set autoindent expandtab sw=4 : */

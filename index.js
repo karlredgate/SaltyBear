@@ -100,6 +100,7 @@ function createWindow() {
     add_app_menu();
 
     // win = new BrowserWindow( {width:800, height: 600} );
+    // win = new BrowserWindow( {width:600, height: 427} );
     win = new BrowserWindow(  );
 
     // This is called a "template literal"
