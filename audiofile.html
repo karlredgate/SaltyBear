@@ -2,12 +2,30 @@
 <html>
     <head>
         <meta charset='UTF-8'/>
-        <title>SaltyBear</title>
+        <title>SaltyBear - Audiofile</title>
+        <link rel="stylesheet" href="css/photon.min.css">
     </head>
     <body>
-        <h1>SaltyBear</h1>
+        <div class='window'>
 
-        <div id='waveform'></div>
+            <header class='toolbar toolbar-header'>
+              <div class='toolbar-actions'>
+                  <div class='btn-group'>
+                      <button class='btn btn-default'>
+                          <span class='icon icon-download'></span>
+                      </button>
+                      <button class='btn btn-default'>
+                          <span class='icon icon-folder'></span>
+                      </button>
+                  </div>
+              </div>
+            </header>
+
+            <div class='window-content'>
+            </div>
+
+        </div>
+            <div id='waveform'></div>
 
         <script src='js/wavesurfer.min.js'></script>
         <script src='js/audiofile.js'></script>

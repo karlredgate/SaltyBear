@@ -78,6 +78,7 @@ function createAudioWindow() {
         win = null;
     }
     win.on( 'closed', closewin );
+    // win.toggleDevTools();
 }
 
 function createYouTubeWindow() {
