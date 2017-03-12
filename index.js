@@ -11,6 +11,10 @@ function die() {
 
 function ipc_handler( event, arg ) {
     console.log(arg);
+    if ( arg === 'download' ) {
+        event.sender.send('asynchronous-reply', 'downloaed');
+        return;
+    }
     event.sender.send('asynchronous-reply', 'pong');
 }
 

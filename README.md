@@ -117,3 +117,8 @@ https://en.wikipedia.org/w/index.php?title=Synthesizer&__hstc=250130137.40fe291a
 https://developers.google.com/youtube/player_parameters
 https://developers.google.com/youtube/iframe_api_reference
 
+youtube
+-------
+
+https://css-tricks.com/fluid-width-youtube-videos/
+

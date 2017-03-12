@@ -23,7 +23,7 @@
             <!--  width="640" height="360" -->
             <div class='padded-more'>
 <iframe id="ytplayer" type="text/html"  width="720" height="480"
-src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com&fs=0&iv_load_policy=3&modestbranding=1&rel=0"
 frameborder="0"></iframe>
             </div>
         </div>
@@ -31,10 +31,21 @@ frameborder="0"></iframe>
         <footer class='toolbar toolbar-footer'>
             <div class='toolbar-actions'>
                 <button class='btn btn-default'>Cancel</button>
-                <button class='btn btn-primary pull-right'>Save</button>
+                <button class='btn btn-primary pull-right'
+                        onclick='download()' >Save</button>
             </div>
         </footer>
         </div>
+        <script>
+            const {ipcRenderer} = require('electron');
+            function reply_handler( event, arg ) {
+                var n = new window.Notification( 'Received', {body: arg} );
+            }
+            ipcRenderer.on('asynchronous-reply', reply_handler );
+            function download() {
+                ipcRenderer.send('asynchronous-message', 'download');
+            }
+        </script>
 
     </body>
 </html>
