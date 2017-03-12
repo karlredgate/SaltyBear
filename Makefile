@@ -10,7 +10,7 @@ app: SaltyBear.app/Contents/Resources/app/package.json
 app: SaltyBear.app/Contents/Resources/app/index.js
 app: SaltyBear.app/Contents/Resources/app/index.html
 app: SaltyBear.app/Contents/Resources/app/youtube.html
-app: SaltyBear.app/Contents/Resources/app/viewer.html
+app: SaltyBear.app/Contents/Resources/app/audiofile.html
 app: SaltyBear.app/Contents/Resources/app/css/photon.css
 app: SaltyBear.app/Contents/Resources/app/css/photon.min.css
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.eot
@@ -18,11 +18,16 @@ app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.svg
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.ttf
 app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.woff
 app: SaltyBear.app/Contents/Resources/app/SaltyBear.png
+app: SaltyBear.app/Contents/Resources/app/js/audiofile.js
+app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js
+app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js.map
+app: SaltyBear.app/Contents/Resources/app/demo.wav
 
 SaltyBear.app/Contents/Resources/app/%: %
 	@mkdir -p SaltyBear.app/Contents/Resources/app
 	@mkdir -p SaltyBear.app/Contents/Resources/app/css
 	@mkdir -p SaltyBear.app/Contents/Resources/app/fonts
+	@mkdir -p SaltyBear.app/Contents/Resources/app/js
 	@mkdir -p SaltyBear.app/Contents/Resources/app/images
 	install $< $@
 

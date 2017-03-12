@@ -40,12 +40,19 @@ function add_app_menu() {
         click: function () { createYouTubeWindow(); }
     };
 
+    var open = {
+        label: 'Open',
+        accelerator: 'Command+O',
+        click: function () { createAudioWindow(); }
+    };
+
     var appMenu = new Menu();
     appMenu.append( new MenuItem(about) );
     appMenu.append( new MenuItem(quit) );
 
     var editMenu = new Menu();
     editMenu.append( new MenuItem({label: 'Junk', type: 'checkbox'}) );
+    editMenu.append( new MenuItem(open) );
     editMenu.append( new MenuItem(youtube) );
 
     var menu = new Menu();
@@ -56,6 +63,21 @@ function add_app_menu() {
         app.quit();
     }
     console.log( 'added menu' );
+}
+
+function createAudioWindow() {
+    // win = new BrowserWindow( {width:800, height: 600} );
+    win = new BrowserWindow(  );
+
+    // This is called a "template literal"
+    // win.loadURL( `file://${__dirname}/index.html` );
+    win.loadURL( 'file://' + __dirname + '/audiofile.html' );
+
+    // win.webContents.openDevTools();
+    function closewin() {
+        win = null;
+    }
+    win.on( 'closed', closewin );
 }
 
 function createYouTubeWindow() {

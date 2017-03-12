@@ -6,27 +6,11 @@
     </head>
     <body>
         <h1>SaltyBear</h1>
-        <p>node version <script>document.write(process.versions.node)</script></p>
 
-        <div class='container'>
-            <div ui-view></div>
-        </div>
+        <div id='waveform'></div>
 
-        <p>
-        <script>
-            var n = new window.Notification( 'Complete', {body: 'something is done'} );
-            // sound.play('DONE');
-            const {ipcRenderer} = require('electron');
-            function reply_handler( event, arg ) {
-               console.log(arg);
-               // document.write( arg );
-               var n = new window.Notification( 'Received', {body: arg} );
-            }
-            ipcRenderer.on('asynchronous-reply', reply_handler );
-            ipcRenderer.send('asynchronous-message', 'ping');
-            document.write( 'sent message' );
-        </script>
-        </p>
+        <script src='js/wavesurfer.min.js'></script>
+        <script src='js/audiofile.js'></script>
     </body>
 </html>
 <!-- vim: set autoindent expandtab sw=4 : -->
