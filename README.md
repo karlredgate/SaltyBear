@@ -53,6 +53,8 @@ http://developer.telerik.com/featured/desktop-apps-with-electron-and-kendo-ui/
 
 https://scotch.io/tutorials/build-a-music-player-with-angular-2-electron-i-setup-basics-concepts
 
+### Material UI
+
 Could use this to create UI Pawan was talking about
 
 A Set of React Components that Implement Google's Material Design
@@ -61,6 +63,9 @@ https://www.material-ui.com/#/
  there are a pile here:
 https://github.com/facebook/react/wiki/Complementary-Tools
 https://github.com/facebookincubator/create-react-app
+
+Other UIs
+---------
 
 https://coligo.io/bookmarking-app-electron-vuejs-firebase/
 
@@ -81,7 +86,11 @@ https://github.com/cocos-creator/editor-framework
 
 https://www.polymer-project.org/
 
+PhotonKit
+---------
+
 http://photonkit.com/components/
+http://photonkit.com/getting-started/
 
 
 https://github.com/gobijan/maverix
@@ -96,16 +105,27 @@ http://www.flotcharts.org/
 Sound
 ------
 
-https://wavesurfer-js.org/
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
-http://js.do/blog/sound-waves-with-javascript/
-http://js.do/sound/js/riffwave.js
+These are a bunch of different NPM packages.
+There are several that would provide interesting/useful features:
+<https://www.npmjs.com/browse/keyword/waveform>
 
 
 This one is cool
 https://www.bignerdranch.com/blog/music-visualization-with-d3-js/
 demo
 http://bignerdranch.github.io/music-frequency-d3/
+
+### WaveSurfer
+
+https://wavesurfer-js.org/
+http://wavesurfer-js.org/docs/options.html
+http://wavesurfer-js.org/plugins/
+https://github.com/katspaugh/wavesurfer.js
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+http://js.do/blog/sound-waves-with-javascript/
+http://js.do/sound/js/riffwave.js
+
 
 bunch of packages listed here
 https://www.npmjs.com/browse/keyword/waveform
@@ -117,8 +137,40 @@ https://en.wikipedia.org/w/index.php?title=Synthesizer&__hstc=250130137.40fe291a
 https://developers.google.com/youtube/player_parameters
 https://developers.google.com/youtube/iframe_api_reference
 
+### AudioLab
+
+https://github.com/audio-lab
+https://github.com/audio-lab/gl-spectrogram
+https://github.com/audio-lab/gl-spectrum
+http://www.supermegaultragroovy.com/2009/10/06/drawing-waveforms/
+https://github.com/audio-lab/gl-waveform
+https://audio-lab.github.io/gl-waveform/
+
+Band.js - music composer
+------------------------
+
+https://github.com/meenie/band.js
+
 youtube
 -------
 
 https://css-tricks.com/fluid-width-youtube-videos/
+
+https://developers.google.com/youtube/player_parameters
+https://developers.google.com/youtube/iframe_api_reference
+
+### youtube-dl
+
+https://rg3.github.io/youtube-dl/
+https://github.com/rg3/youtube-dl/
+http://rg3.github.io/youtube-dl/download.html
+https://github.com/rg3/youtube-dl/blob/master/README.md#readme
+
+http://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries
+
+App Debugging
+-------------
+
+https://github.com/sindresorhus/electron-debug
+
 

@@ -1,4 +1,15 @@
 
+const {ipcRenderer} = require('electron');
+var fileName = 'EMPTY';
+
+function messageHandler( event, arg ) {
+    fileName = arg;
+    makewave();
+}
+
+ipcRenderer.on( 'asynchronous-message', messageHandler );
+ipcRenderer.on( 'synchronous-message', messageHandler );
+
 var EQ = [
     { f:    32, type: 'lowshelf'  },
     { f:    64, type: 'peaking'   },
@@ -83,12 +94,12 @@ function makewave() {
     filterSet.forEach( createFilterControl.bind(wavesurfer) );
     wavesurfer.filters = filterSet;
 
-    wavesurfer.load( 'demo.wav' );
+    wavesurfer.load( fileName );
     wavesurfer.on('ready', readyHandler.bind(wavesurfer) );
     wavesurfer.play();
     player = wavesurfer;
 }
 
-makewave();
+// makewave();
 
 /* vim: set autoindent expandtab sw=4 : */

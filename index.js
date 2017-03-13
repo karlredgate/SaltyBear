@@ -2,6 +2,7 @@
 const electron = require('electron');
 const {app, BrowserWindow, Menu, MenuItem} = electron;
 const {ipcMain} = electron;
+const {dialog} = electron;
 
 let win;
 
@@ -42,27 +43,60 @@ function add_app_menu() {
 
     var open = {
         label: 'Open',
-        accelerator: 'Command+O',
         click: function () { createAudioWindow(); }
+    };
+
+    var openFile = {
+        label: 'Open File',
+        accelerator: 'Command+O',
+        click: function () { openAudioWindow(); }
     };
 
     var appMenu = new Menu();
     appMenu.append( new MenuItem(about) );
     appMenu.append( new MenuItem(quit) );
 
+    var fileMenu = new Menu();
+    fileMenu.append( new MenuItem(open) );
+    fileMenu.append( new MenuItem(openFile) );
+    fileMenu.append( new MenuItem(youtube) );
+
     var editMenu = new Menu();
     editMenu.append( new MenuItem({label: 'Junk', type: 'checkbox'}) );
-    editMenu.append( new MenuItem(open) );
-    editMenu.append( new MenuItem(youtube) );
 
     var menu = new Menu();
     menu.append( new MenuItem({label: appName, submenu: appMenu}) );
+    menu.append( new MenuItem({label: 'File', submenu: fileMenu}) );
     menu.append( new MenuItem({label: 'Edit', submenu: editMenu}) );
 
     if ( Menu.setApplicationMenu( menu ) ) {
         app.quit();
     }
     console.log( 'added menu' );
+}
+
+function createAudioFileWindow( path ) {
+    win = new BrowserWindow(  );
+    win.loadURL( 'file://' + __dirname + '/audiofile.html' );
+
+    function closewin() {
+        win = null;
+    }
+    win.on( 'closed', closewin );
+    win.webContents.on( 'did-finish-load', function () {
+        win.webContents.send( 'asynchronous-message', path );
+    });
+    // win.toggleDevTools();
+}
+
+function openAudioWindow() {
+    var config = {
+        properties: ['openFile']
+    };
+    function openFile( paths ) {
+        createAudioFileWindow( paths[0] );
+    }
+    dialog.showOpenDialog( config, openFile );
 }
 
 function createAudioWindow() {
