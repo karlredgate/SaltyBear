@@ -41,11 +41,6 @@ function add_app_menu() {
         click: function () { createYouTubeWindow(); }
     };
 
-    var open = {
-        label: 'Open',
-        click: function () { createAudioWindow(); }
-    };
-
     var openFile = {
         label: 'Open File',
         accelerator: 'Command+O',
@@ -57,7 +52,6 @@ function add_app_menu() {
     appMenu.append( new MenuItem(quit) );
 
     var fileMenu = new Menu();
-    fileMenu.append( new MenuItem(open) );
     fileMenu.append( new MenuItem(openFile) );
     fileMenu.append( new MenuItem(youtube) );
 
@@ -97,22 +91,6 @@ function openAudioWindow() {
         createAudioFileWindow( paths[0] );
     }
     dialog.showOpenDialog( config, openFile );
-}
-
-function createAudioWindow() {
-    // win = new BrowserWindow( {width:800, height: 600} );
-    win = new BrowserWindow(  );
-
-    // This is called a "template literal"
-    // win.loadURL( `file://${__dirname}/index.html` );
-    win.loadURL( 'file://' + __dirname + '/audiofile.html' );
-
-    // win.webContents.openDevTools();
-    function closewin() {
-        win = null;
-    }
-    win.on( 'closed', closewin );
-    // win.toggleDevTools();
 }
 
 function createYouTubeWindow() {
