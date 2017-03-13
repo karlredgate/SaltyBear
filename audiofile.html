@@ -29,19 +29,24 @@
 -->
         <div >
         <div style='background: url("images/gold-riveted-metal.jpg") no-repeat; background-size:100%; '>
-            <div style='background-color:black; margin:35px'>
+          <div style='margin: 40px'>
+            <div style='background-color:black;'>
               <div id='waveform'></div>
               <div id='timeline'></div>
             </div>
+          </div>
         </div>
             <div class='container' style='text-align: center'>
                 <button class='btn btn-primary' onclick='player.playPause()'>
-                    <i class='glyphicon glyphicon-play'></i>
-                    Play/Pause
+                    <i class='icon icon-play'></i>
+                    <i class='icon icon-dot'></i>
+                    <i class='icon icon-pause'></i>
                 </button>
             </div>
+            <div style='width: 60%; margin-left:auto; margin-right:auto'>
             <div id='equalizer'
                  style='margin-top:10px;'></div>
+            </div>
         </div>
 
         <script src='js/wavesurfer.min.js'></script>
