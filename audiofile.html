@@ -5,7 +5,7 @@
         <title>SaltyBear - Audiofile</title>
         <link rel="stylesheet" href="css/photon.min.css">
     </head>
-    <body>
+    <body style='background-image: url("images/latch-metal.jpg"); background-size:150%; padding: 20px;'>
 <!--
         <div class='window'>
 
@@ -27,16 +27,25 @@
 
         </div>
 -->
-            <div id='waveform'></div>
+        <div >
+        <div style='background: url("images/gold-riveted-metal.jpg") no-repeat; background-size:100%; '>
+            <div style='background-color:black; margin:35px'>
+              <div id='waveform'></div>
+              <div id='timeline'></div>
+            </div>
+        </div>
             <div class='container' style='text-align: center'>
                 <button class='btn btn-primary' onclick='player.playPause()'>
                     <i class='glyphicon glyphicon-play'></i>
                     Play/Pause
                 </button>
             </div>
-            <div id='equalizer' style='margin-top:10px'></div>
+            <div id='equalizer'
+                 style='margin-top:10px;'></div>
+        </div>
 
         <script src='js/wavesurfer.min.js'></script>
+        <script src='js/plugin/wavesurfer.timeline.min.js'></script>
         <script src='js/audiofile.js'></script>
     </body>
 </html>

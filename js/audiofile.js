@@ -24,9 +24,11 @@ function filter(band) {
 
 var config = {
     container: '#waveform',
+    barWidth: 3,
     splitChannels: true,
+    cursorColor: 'gold',
     waveColor: 'orange',
-    progressColor: 'darkorange'
+    progressColor: 'orangered'
 };
 
 function createFilterControl( filter ) {
@@ -64,14 +66,25 @@ var player = null;
 
 function makewave() {
     var wavesurfer = WaveSurfer.create( config );
-    var filterSet = EQ.map( filter.bind(wavesurfer) );
 
+    function readyHandler() {
+        var timeline = Object.create(WaveSurfer.Timeline);
+        var config = {
+            wavesurfer: this,
+            primaryFontColor: 'gold',
+            container: '#timeline'
+        };
+        timeline.init( config );
+        this.play();
+    }
+
+    var filterSet = EQ.map( filter.bind(wavesurfer) );
     wavesurfer.backend.setFilters( filterSet );
     filterSet.forEach( createFilterControl.bind(wavesurfer) );
     wavesurfer.filters = filterSet;
 
     wavesurfer.load( 'demo.wav' );
-    wavesurfer.on('ready', function () { wavesurfer.play(); } );
+    wavesurfer.on('ready', readyHandler.bind(wavesurfer) );
     wavesurfer.play();
     player = wavesurfer;
 }

@@ -21,9 +21,13 @@ app: SaltyBear.app/Contents/Resources/app/fonts/photon-entypo.woff
 app: SaltyBear.app/Contents/Resources/app/js/audiofile.js
 app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js
 app: SaltyBear.app/Contents/Resources/app/js/wavesurfer.min.js.map
+app: SaltyBear.app/Contents/Resources/app/js/plugin/wavesurfer.timeline.min.js
 app: SaltyBear.app/Contents/Resources/app/images/orange-metal.jpg
 app: SaltyBear.app/Contents/Resources/app/images/orange-sound-waves.jpg
 app: SaltyBear.app/Contents/Resources/app/images/gold-leaf.jpg
+app: SaltyBear.app/Contents/Resources/app/images/swirl-brushed-steel.jpg
+app: SaltyBear.app/Contents/Resources/app/images/latch-metal.jpg
+app: SaltyBear.app/Contents/Resources/app/images/gold-riveted-metal.jpg
 
 app: SaltyBear.app/Contents/Resources/app/demo.wav
 
@@ -31,7 +35,7 @@ SaltyBear.app/Contents/Resources/app/%: %
 	@mkdir -p SaltyBear.app/Contents/Resources/app
 	@mkdir -p SaltyBear.app/Contents/Resources/app/css
 	@mkdir -p SaltyBear.app/Contents/Resources/app/fonts
-	@mkdir -p SaltyBear.app/Contents/Resources/app/js
+	@mkdir -p SaltyBear.app/Contents/Resources/app/js/plugin
 	@mkdir -p SaltyBear.app/Contents/Resources/app/images
 	install $< $@
 
