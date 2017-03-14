@@ -109,12 +109,12 @@ function createYouTubeWindow() {
     win.on( 'closed', closewin );
 }
 
-function createWindow() {
+function createSplashScreen() {
     add_app_menu();
 
     // win = new BrowserWindow( {width:800, height: 600} );
     // win = new BrowserWindow( {width:600, height: 427} );
-    win = new BrowserWindow( {width:600, height: 600} );
+    win = new BrowserWindow( {width:600, height: 530, frame: false} );
     // win = new BrowserWindow(  );
 
     // This is called a "template literal"
@@ -127,15 +127,20 @@ function createWindow() {
     }
     win.on( 'closed', closewin );
 
-    win.setProgressBar( 0.70 );
-    app.dock.setBadge( '5 done' );
+    function closeSplash() { win.close(); }
+    function scheduleCloseSplash() { setTimeout( closeSplash, 3000 ); }
+
+    win.webContents.on( 'did-finish-load', scheduleCloseSplash );
+
+    // win.setProgressBar( 0.70 );
+    // app.dock.setBadge( '5 done' );
 }
 
 function activate() {
-    if ( win === null ) createWindow();
+    if ( win === null ) createSplashScreen();
 }
 
-app.on( 'ready', createWindow );
+app.on( 'ready', createSplashScreen );
 app.on( 'window-all-closed', die );
 app.on( 'activate', activate );
 
