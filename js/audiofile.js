@@ -98,6 +98,9 @@ function makewave() {
     wavesurfer.on('ready', readyHandler.bind(wavesurfer) );
     wavesurfer.play();
     player = wavesurfer;
+
+    var container = document.querySelector( '#filename' );
+    container.textContent = fileName;
 }
 
 // makewave();

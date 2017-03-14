@@ -88,6 +88,7 @@ function openAudioWindow() {
         properties: ['openFile']
     };
     function openFile( paths ) {
+        if ( paths == null ) return;
         createAudioFileWindow( paths[0] );
     }
     dialog.showOpenDialog( config, openFile );

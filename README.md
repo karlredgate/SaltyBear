@@ -1,6 +1,11 @@
-# SaltyBear
+SaltyBear
+=========
+
 Redgate sound tool for OSX
 
+ * change to audio window having slide down file menu
+ * fix gold background
+ * add filename to title or some other indicator
  * install sources in app hier
  * create dmg
 
@@ -105,6 +110,8 @@ http://www.flotcharts.org/
 Sound
 ------
 
+Google: how to generate graph of sound waves in javascript app
+
 These are a bunch of different NPM packages.
 There are several that would provide interesting/useful features:
 <https://www.npmjs.com/browse/keyword/waveform>
@@ -126,16 +133,32 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 http://js.do/blog/sound-waves-with-javascript/
 http://js.do/sound/js/riffwave.js
 
+### Waveform.js
+
+http://www.waveformjs.org/
+https://github.com/samcrosoft/waveformjs
+
+### livejs - bunch of modules
+
+https://github.com/livejs - not sure there is anything here really
+
 
 bunch of packages listed here
 https://www.npmjs.com/browse/keyword/waveform
 
+https://github.com/mathiasvr/audio-oscilloscope
+https://www.npmjs.com/package/howler
+https://github.com/audiojs/pcm-util
+
+
 https://modernweb.com/audio-synthesis-in-javascript/
+https://dev.opera.com/articles/drum-sounds-webaudio/
+https://chrislo.github.io/drum_synthesis/
+http://www.supermegaultragroovy.com/2009/10/06/drawing-waveforms/
 
 https://en.wikipedia.org/w/index.php?title=Synthesizer&__hstc=250130137.40fe291a1f359a084f954acb10b331bd.1489264463825.1489264463825.1489264463825.1&__hssc=250130137.1.1489264463826&__hsfp=3706891617#ADSR_envelope
 
-https://developers.google.com/youtube/player_parameters
-https://developers.google.com/youtube/iframe_api_reference
+https://github.com/bbc/audiowaveform
 
 ### AudioLab
 
@@ -145,6 +168,35 @@ https://github.com/audio-lab/gl-spectrum
 http://www.supermegaultragroovy.com/2009/10/06/drawing-waveforms/
 https://github.com/audio-lab/gl-waveform
 https://audio-lab.github.io/gl-waveform/
+
+Capo 3
+------
+
+$50 - http://supermegaultragroovy.com/products/capo/
+
+alternatives
+http://www.sonicvisualiser.org/ - OSS
+https://www.tunetranscriber.com/
+
+https://also.github.io/
+https://wiki.mozilla.org/Audio_Data_API
+https://also.github.io/2011/03/19/web-audio-api-generating-sound.html
+http://chromium.googlecode.com/svn/trunk/samples/audio/specification/specification.html
+https://github.com/also
+https://github.com/also/soundtouch-js
+
+Synthesizers
+------------
+
+http://synth.bitsnbites.eu/
+http://www.pouet.net/prod.php?which=53615
+https://gitorious.org/js-sonant/js-sonant
+
+https://thiscouldbebetter.wordpress.com/2013/06/05/a-simple-music-synthesizer-in-javascript/
+https://thiscouldbebetter.neocities.org/synthesizer.html
+
+http://mrcoles.com/piano/
+http://offtonic.com/synth/
 
 Band.js - music composer
 ------------------------
@@ -168,9 +220,31 @@ https://github.com/rg3/youtube-dl/blob/master/README.md#readme
 
 http://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries
 
+Canvas Libraries
+-----------------
+
+https://github.com/konvajs/konva
+https://konvajs.github.io/
+
+Other Interesting
+-----------------
+
+Digital timing diagrams
+http://wavedrom.com/
+https://github.com/drom/wavedrom
+
 App Debugging
 -------------
 
 https://github.com/sindresorhus/electron-debug
 
 
+TODO
+----
+
+```
+Uncaught Exception:
+TypeError: Cannot read property '0' of undefined
+    at openFile                 (SaltyBear.app/Contents/Resources/app/index.js:91:37)
+    at Function.wrappedCallback (SaltyBear.app/Contents/Resources/electron.asar/browser/api/dialog.js:129:14)
+```
