@@ -70,7 +70,12 @@ function add_app_menu() {
 }
 
 function createAudioFileWindow( path ) {
-    win = new BrowserWindow(  );
+    var config = {
+        titleBarStyle: 'hidden',
+        useContentSize: true,
+        resizable: false
+    };
+    var win = new BrowserWindow( config );
     win.loadURL( 'file://' + __dirname + '/audiofile.html' );
 
     function closewin() {
@@ -96,7 +101,7 @@ function openAudioWindow() {
 
 function createYouTubeWindow() {
     // win = new BrowserWindow( {width:800, height: 600} );
-    win = new BrowserWindow(  );
+    var win = new BrowserWindow(  );
 
     // This is called a "template literal"
     // win.loadURL( `file://${__dirname}/index.html` );
@@ -114,7 +119,7 @@ function createSplashScreen() {
 
     // win = new BrowserWindow( {width:800, height: 600} );
     // win = new BrowserWindow( {width:600, height: 427} );
-    win = new BrowserWindow( {width:600, height: 530, frame: false} );
+    var win = new BrowserWindow( {width:600, height: 530, frame: false} );
     // win = new BrowserWindow(  );
 
     // This is called a "template literal"
