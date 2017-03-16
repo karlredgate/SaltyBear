@@ -4,6 +4,8 @@
         <meta charset='UTF-8'/>
         <title>SaltyBear - Audiofile</title>
         <link rel="stylesheet" href="css/photon.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     </head>
     <body style='background-image: url("images/latch-metal.jpg"); background-size:150%; padding: 20px;'>
 <!--
@@ -41,10 +43,17 @@
                 </button>
             </div>
             <div style='width: 70%; margin-left:auto; margin-right:auto;'>
-                <div id='equalizer' style='margin-top:10px;'></div>
+                <div id='equalizer' style='margin-top:10px;margin-bottom:20px;'></div>
+            </div>
+            <div class='progress'>
+                <div class='progress-bar' role='progressbar' id='exportProgress' style='width:10%'>
+                    <span class='sr-only'>10% Complete</span>
+                </div>
             </div>
         </div>
 
+        <script src='js/jquery-2.2.4.js'></script>
+        <script src='js/bootstrap.js'></script>
         <script src='js/wavesurfer.min.js'></script>
         <script src='js/plugin/wavesurfer.timeline.min.js'></script>
         <script src='js/audiofile.js'></script>

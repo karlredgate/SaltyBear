@@ -220,11 +220,91 @@ https://github.com/rg3/youtube-dl/blob/master/README.md#readme
 
 http://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries
 
+Sound Services
+---------------
+
+https://developers.soundcloud.com/
+https://en.wikipedia.org/wiki/SoundCloud
+
+https://en.wikipedia.org/wiki/SoundHound
+http://www.soundhound.com/
+https://www.houndify.com/
+
+https://en.wikipedia.org/wiki/Shazam_(service)
+https://github.com/shazam
+
+https://www.theguardian.com/technology/appsblog/2011/jun/23/echoprint-music-recognition
+http://the.echonest.com/
+http://notes.variogr.am/post/544559482/the-echo-nest-musical-fingerprint-enmfp
+https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition
+
+https://developer.gracenote.com/
+
+https://www.acrcloud.com/
+https://en.wikipedia.org/wiki/ACRCloud
+
+http://alphonso.tv/
+https://www.audiblemagic.com/am-developers/
+
+https://en.wikipedia.org/wiki/List_of_music_software
+https://en.wikipedia.org/wiki/Automatic_content_recognition
+
+http://stackoverflow.com/questions/6269167/open-source-audio-pattern-recognition-finger-printing
+
+### EchoPrint
+
+http://www.billboard.com/biz/articles/news/digital-and-mobile/5944950/the-echo-nest-cto-brian-whitman-on-spotify-deal-man-vs
+http://blog.echonest.com/post/25996355671/echoprint-opensource-audio
+https://gist.github.com/predakanga/2376835
+https://twitter.com/echoprint
+https://www.theguardian.com/technology/appsblog/2011/jun/23/echoprint-music-recognition
+
+https://www.7digital.com/
+https://en.wikipedia.org/wiki/7digital
+
+Seems to be part of spotify now??
+https://github.com/spotify/echoprint-server
+
+http://echoprint.me/ - site is down right now
+https://www.google.com/search?q=echoprint%20me
+http://blog.echonest.com/post/6824753703/announcing-echoprint
+https://github.com/echonest/echoprint-server
+https://github.com/echonest
+
+http://cmusphinx.sourceforge.net/wiki/
+https://www.politepix.com/openears/
+https://acoustid.org/
+https://musicbrainz.org/doc/Fingerprinting
+https://code.google.com/archive/p/musicg/
+https://github.com/AddictedCS/soundfingerprinting
+https://www.codeproject.com/Articles/206507/Duplicates-detector-via-audio-fingerprinting
+
+AI
+----
+
+Siri
+
+http://viv.ai/
+https://en.wikipedia.org/wiki/Viv_(software)
+
 Canvas Libraries
 -----------------
 
 https://github.com/konvajs/konva
 https://konvajs.github.io/
+
+Sound Sites
+-----------
+
+https://www.freesound.org/
+http://soundbible.com/free-sound-effects-1.html
+http://www.zapsplat.com/
+https://www.audioblocks.com/
+http://www.grsites.com/archive/sounds/
+http://www.hongkiat.com/blog/55-great-websites-to-download-free-sound-effects/
+http://www.audiomicro.com/free-sound-effects
+http://www.freeplaymusic.com/
+http://www.sounddogs.com/
 
 Other Interesting
 -----------------
@@ -233,10 +313,66 @@ Digital timing diagrams
 http://wavedrom.com/
 https://github.com/drom/wavedrom
 
+Presentations
+-------------
+
+https://github.com/hakimel/reveal.js
+
 App Debugging
 -------------
 
 https://github.com/sindresorhus/electron-debug
+http://stackoverflow.com/questions/30814336/error-messages-and-console-logs-in-electron
+http://mylifeforthecode.com/debugging-renderer-process-in-electron/
+
+Info.plist
+----------
+
+https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html
+https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW1
+
+http://stackoverflow.com/questions/11003211/package-a-node-js-app-as-an-osx-app#16303923
+https://coolaj86.com/articles/how-to-create-an-osx-pkg-installer.html
+
+https://github.com/breach/thrust
+http://appjs.com/
+https://github.com/appjs/appjs
+https://github.com/sihorton/appjs-deskshell/
+
+Javascript
+----------
+
+http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply#1986909
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator
+
+https://electron.atom.io/docs/api/webview-tag/
+http://stackoverflow.com/questions/30765923/how-to-use-the-webview-methods-in-electron#30824951
+
+```
+ipcRenderer.sendToHost(channel[, arg1][, arg2][, ...])
+channel String
+...args any[]
+```
+
+Like `ipcRenderer.send` but the event will be sent to the `<webview>`
+element in the host page instead of the main process.
+
+Muon
+----
+
+Part of the Brave browser project.
+
+https://github.com/brave/muon
+
+Muon is a framework that leverages the full power of Chromium
+including extensions support, and allows you to build browsers and
+browser like applications with HTML, CSS, and JavaScript. Node is
+added into the browser process only for security reasons.
+
+It may be a better fit than Electron for your application, if your
+application needs to leverage the full support of Chromium, needs
+tighter security, or needs support for things like autofill and
+extensions.
 
 
 TODO

@@ -2,9 +2,32 @@
 const {ipcRenderer} = require('electron');
 var fileName = 'EMPTY';
 
-function messageHandler( event, arg ) {
-    fileName = arg;
-    makewave();
+var dispatch = {
+    loadFile:
+        function ( arg ) {
+            fileName = arg.fileName;
+            makewave();
+        },
+    exportProgressUpdate:
+        function ( arg ) {
+            var progressBar = document.querySelector( '#exportProgress' );
+            progressBar.style.width = arg.progress;
+        },
+    ping:
+        function ( arg ) {
+            this.sender.send('asynchronous-reply', 'pong');
+        },
+    pong:
+        function (arg) {
+            // notification??
+        }
+};
+
+function messageHandler( event, messageType, arg ) {
+    var n = new window.Notification( 'Complete', { body: messageType } );
+    var handler = dispatch[messageType];
+    if ( handler == null ) ; // error
+    handler.call( event, arg );
 }
 
 ipcRenderer.on( 'asynchronous-message', messageHandler );
@@ -101,8 +124,15 @@ function makewave() {
 
     var container = document.querySelector( '#filename' );
     container.textContent = fileName;
+    var progressBar = document.querySelector( '#exportProgress' );
+    // progressBar.style.width = '50%';
 }
 
 // makewave();
+
+function exportFile() {
+    if ( fileName == 'EMPTY' ) ; // error
+    ipcRenderer.send( 'asynchronous-message', 'exportFile', {type: 'mp3', fileName: fileName} );
+}
 
 /* vim: set autoindent expandtab sw=4 : */

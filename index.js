@@ -10,6 +10,20 @@ function die() {
     if ( process.platform !== 'darwin' ) app.quit();
 }
 
+var dispatch = {
+    exportAudio:
+        function (arg) {
+        },
+    ping:
+        function (arg) {
+            this.sender.send('asynchronous-reply', 'pong');
+        },
+    pong:
+        function (arg) {
+            // notification
+        }
+};
+
 function ipc_handler( event, arg ) {
     console.log(arg);
     if ( arg === 'download' ) {
@@ -47,6 +61,12 @@ function add_app_menu() {
         click: function () { openAudioWindow(); }
     };
 
+    var exportAudioFile = {
+        label: 'Export',
+        accelerator: 'Command+E',
+        click: function () { requestExport(); }
+    };
+
     var appMenu = new Menu();
     appMenu.append( new MenuItem(about) );
     appMenu.append( new MenuItem(quit) );
@@ -69,6 +89,11 @@ function add_app_menu() {
     console.log( 'added menu' );
 }
 
+function requestExport() {
+    // how to select current active window
+    // Then get fileName from that window
+}
+
 function createAudioFileWindow( path ) {
     var config = {
         titleBarStyle: 'hidden',
@@ -83,7 +108,7 @@ function createAudioFileWindow( path ) {
     }
     win.on( 'closed', closewin );
     win.webContents.on( 'did-finish-load', function () {
-        win.webContents.send( 'asynchronous-message', path );
+        win.webContents.send( 'asynchronous-message', 'loadFile', {fileName:path} );
     });
     // win.toggleDevTools();
 }
